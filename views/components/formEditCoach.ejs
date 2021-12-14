@@ -1,0 +1,91 @@
+<h2>Course</h2>
+
+<form
+  action=" <%= '/coaches/' + coach.coachID + '/edit' %>"
+  method="POST"
+>
+
+  <div>
+    <label class="form-label">
+      Coach ID:
+      <input
+        class="form-control"
+        type="text"
+        name="coachID"
+        value="<%= coach.coachID %>"
+        disabled
+      />
+    </label>
+  </div>
+
+  <div>
+    <label class="form-label">
+      First Name:
+      <input
+        class="form-control"
+        type="text"
+        name="firstName"
+        value="<%= coach.firstName%>"
+      />
+    </label>
+    <label class="form-label">
+      Last Name:
+      <input
+        class="form-control"
+        type="text"
+        name="lastName"
+        value="<%= coach.lastName%>"
+      />
+    </label>
+  </div>
+
+  <div>
+    <label class="form-label">
+      Phone Number:
+      <input
+        class="form-control"
+        type="text"
+        name="phoneNumber"
+        value="<%= coach.phoneNumber %>"
+      />
+    </label>
+    <label class="form-label">
+      Location:
+      <input
+        class="form-control"
+        type="text"
+        name="location"
+        value="<%= coach.location %>"
+      />
+    </label>
+  </div>
+
+  <div>
+    <label class="form-label">
+      Registered on:
+      <input
+        class="form-control"
+        type="text"
+        name="registerOn"
+        value="<%= coach.registerOn %>"
+        disabled
+      />
+    </label>
+    <label class="form-label">
+      Ratings:
+      <input
+        class="form-control"
+        type="text"
+        name="ratings"
+        value="<%= coach.ratings %>"
+      />
+    </label>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Edit</button>
+  <a
+    class="btn btn-danger"
+    hcourse="<%= '/coach/' + coach.coachID + '/delete' %>"
+    >Delete</a
+  >
+</form>

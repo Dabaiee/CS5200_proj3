@@ -36,6 +36,10 @@ async function loadCoaches(){
   try {
     redisClient = await getRConnection();
     await redisClient.set("coachesCount", "0");
+    
+    await redisClient.del("historyLeaderboard");
+    await redisClient.del("testLeaderboard");
+    await redisClient.del("coaches");
     for (let coach of coaches){
       const key = `coach:${coach.coachID}`;
       await redisClient.hSet(key, {

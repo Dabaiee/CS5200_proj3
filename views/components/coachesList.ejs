@@ -6,8 +6,18 @@
             <div class="card p-1">
                 <h5 class="card-title"><%= coach.firstName+ " "+ coach.lastName %></h5>
                 <div class="card-text">
-                    <div>Coach ID:<%= coach.coachID %></div>
-                    <div>Rating:<%= coach.ratings %> </div>
+                    <div>Phone Number:<%= coach.phoneNumber %></div>
+                    <div>Location:<%= coach.location %></div>
+                    <div>Ratings:<%= coach.ratings %> </div>
+                    <div>Registed on:<%= coach.registerOn %></div>
+                    <div>
+                      <a class="btn btn-outline-primary" href="<%= '/coaches/' + coach.coachID + '/edit' %>">
+                        Edit
+                      </a>
+                      <a class="btn btn-outline-danger" href="<%= '/coaches/' + coach.coachID + '/delete' %>">
+                        Delete
+                      </a>
+                    </div>
                 </div>
             </div>
         </div>

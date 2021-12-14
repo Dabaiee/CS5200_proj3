@@ -249,15 +249,76 @@ router.get("/leaderboard", async (req, res, next) => {
   }
 });
 
+router.get("/leaderboard2", async (req, res, next) => {
+  const msg = req.query.msg || null;
+  try {
+    let coaches = await myRedis.getOldestCoach();
+    res.render("./pages/leaderboard2", {
+      coaches,
+      msg,
+    })
+  } catch (err) {
+    next(err);
+  }
+});
+
 router.post("/createCoach", async (req, res, next) => {
   const coach = req.body;
 
   try {
-    console.log(coach);
+    // console.log(coach);
     await myRedis.insertCoach(coach);
     console.log("Inserted");
+    res.redirect("/leaderboard");
   } catch (err) {
     console.log("Error inserting", err);
+    next(err);
+  }
+});
+
+router.get("/coaches/:coachID/edit", async (req, res, next) => {
+  const coachID = req.params.coachID;
+  const msg = req.query.msg || null;
+
+  try {
+
+    let coach = await myRedis.getCoach(`coach:${coachID}`);
+
+    res.render("./pages/editCoach", {
+      coach,
+      msg,
+    });
+  } catch (err) {
+    next(err);
+  }
+});
+
+router.post("/coaches/:coachID/edit", async (req, res, next) => {
+  const coachID = req.params.coachID;
+  const coach = req.body;
+  const msg = req.query.msg || null;
+  try {
+    console.log("editing", coachID);
+    await myRedis.updateCoach(`coach:${coachID}`, coach);
+    res.redirect(`/leaderboard/?msg=Updated`);
+
+
+  } catch (err) {
+    next(err);
+  }
+});
+
+router.get("/coaches/:coachID/delete", async (req, res, next) => {
+  const coachID = req.params.coachID;
+  console.log("deleting", coachID);
+  // '/coaches/' + coach.coachID + '/delete' 
+  try {
+
+    let deleteResult = await myRedis.deleteCoach(`coach:${coachID}`);
+    console.log("deleted");
+    res.redirect("/leaderboard/?msg=Deleted");
+
+  } catch (err) {
     next(err);
   }
 });

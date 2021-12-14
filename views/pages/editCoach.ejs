@@ -6,7 +6,8 @@
     <%- include("../templates/navBar.ejs") %>
 
     <div class="container">
-      <h1>Edit Course</h1>
+      <h1>Edit Coach</h1>
+
 
       <% if (msg) { %>
         <div class="alert alert-primary">
@@ -14,9 +15,8 @@
         </div>
       <% } %>
 
-      
-      <%- include("../components/formEditCourse.ejs", { course }) %>
-      <%- include("../components/studentList.ejs", { students }) %>
+      <%- include("../components/formEditCoach.ejs", { coach }) %>
+
 
     </div>
 
