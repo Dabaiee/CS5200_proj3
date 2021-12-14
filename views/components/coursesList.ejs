@@ -1,0 +1,28 @@
+<h2>Courses</h2>
+<div class="row g-3">
+  <% for (let course of courses) { %>
+
+    <div class="col-4">
+      <div class="card p-1">
+        <h5 class="card-title"><%= course.courseName %></h5>
+        <div class="card-text">
+          <div>Car Type:<%= course.carType %></div>
+          <div>Start Time:<%= course.startTime %></div>
+          <div>Duration:<%= course.duration %> </div>
+          <div>Capacity:<%= course.capacity %></div>
+          <div>Coach ID:<%= course.coachID %></div>
+
+          <div>
+            <a class="btn btn-outline-primary" href="<%= '/courses/' + course.courseID + '/edit' %>">Edit</a>
+            <a class="btn btn-outline-danger" href="<%= '/courses/' + course.courseID + '/delete' %>">Delete</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  <% } %>
+
+ <%- include("./pagination.ejs", { currentPage, lastPage }) %>
+
+</div>

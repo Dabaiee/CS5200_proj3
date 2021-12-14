@@ -1,0 +1,14 @@
+<h2>Coach Information</h2>
+
+<ul>
+    <% for (let a of coach) { %>
+
+        <div>Coach ID:<%= a.coachID %></div>
+        <div>Coach Name:<%= a.firstName %><%= a.lashName %></div>
+        <div>Register On:<%= a.registerOn %></div>
+        <div>Rating:<%= a.ratings %></div>
+        <div>location:<%= a.location %></div>
+        <div>Phone Number:<%= a.phoneNumber %></div>
+    <%  }%>
+</ul>
+<br>

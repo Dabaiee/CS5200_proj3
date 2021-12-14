@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <%- include("../templates/head.ejs") %>
+  <body>
+
+    <%- include("../templates/navBar.ejs") %>
+
+    <div class="container">
+      <h1>Schedule Course</h1>
+
+
+      <% if (msg) { %>
+        <div class="alert alert-primary">
+          <%= msg %>
+        </div>
+      <% } %>
+
+      <div class="row">
+        <div class="col-8">
+          <%- include("../components/formScheduleCourse.ejs", { course }) %>
+          <%- include("../components/coachList.ejs", { coach }) %>
+          <%- include("../components/formAddStudent.ejs", { course }) %>
+        </div>
+        <div class="col-4">
+          <%- include("../components/formCreateStudent.ejs", { course }) %>
+        </div>
+      </div>
+
+
+
+    </div>
+
+    <%- include("../templates/footer.ejs") %>
+  </body>
+</html>

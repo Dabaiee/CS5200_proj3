@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<%- include("../templates/head.ejs") %>
+<body>
+
+<%- include("../templates/navBar.ejs") %>
+
+<div class="container">
+	<h1>Course Schedule</h1>
+
+
+	<% if (msg) { %>
+		<div class="alert alert-primary">
+			<%= msg %>
+		</div>
+	<% } %>
+
+
+	<div class="row">
+		<div class="col-sm">
+			<%- include("../components/searchBar.ejs", { query }) %>
+			<%- include("../components/coursesPickList.ejs", { courses, currentPage, lastPage }) %>
+		</div>
+	</div>
+
+</div>
+
+<%- include("../templates/footer.ejs") %>
+</body>
+</html>

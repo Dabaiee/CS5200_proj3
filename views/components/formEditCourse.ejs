@@ -1,0 +1,57 @@
+<h2>Course</h2>
+
+<form
+  action=" <%= '/courses/' + course.courseID + '/edit' %>"
+  method="POST"
+>
+
+  <div>
+    <label class="form-label">
+      Course ID:
+      <input
+        class="form-control"
+        type="text"
+        name="courseID"
+        value="<%= course.courseID %>"
+        disabled
+      />
+    </label>
+    <label class="form-label">
+      Course Name:
+      <input
+        class="form-control"
+        type="text"
+        name="courseName"
+        value="<%= course.courseName %>"
+      />
+    </label>
+  </div>
+
+  <div>
+    <label class="form-label">
+      Start Time:
+      <input
+        class="form-control"
+        type="text"
+        name="startTime"
+        value="<%= course.startTime %>"
+      />
+    </label>
+    <!--<label class="form-label">-->
+      <!--Duration:-->
+      <!--<input-->
+        <!--class="form-control"-->
+        <!--type="text"-->
+        <!--name="startTime"-->
+        <!--value="<%= course.duration %>"-->
+      <!--/>-->
+    <!--</label>-->
+  </div>
+
+  <button type="submit" class="btn btn-primary">Edit</button>
+  <a
+    class="btn btn-danger"
+    hcourse="<%= '/courses/' + course.courseID + '/delete' %>"
+    >Delete</a
+  >
+</form>

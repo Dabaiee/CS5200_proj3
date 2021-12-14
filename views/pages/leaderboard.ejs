@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<%- include("../templates/head.ejs") %>
+<body>
+
+<%- include("../templates/navBar.ejs") %>
+
+<div class="container">
+	<h1>Best Coaches</h1>
+
+
+	<% if (msg) { %>
+		<div class="alert alert-primary">
+			<%= msg %>
+		</div>
+	<% } %>
+
+
+	<div class="row">
+		<div class="col-sm">
+        <%- include("../components/coachesList.ejs", { coaches }) %>
+		</div>
+		<div class="col-4">
+          <%- include("../components/formCreateCoach.ejs") %>
+        </div>
+	</div>
+
+</div>
+
+<%- include("../templates/footer.ejs") %>
+</body>
+</html>

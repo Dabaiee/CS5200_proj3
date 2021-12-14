@@ -1,0 +1,44 @@
+<h2>Course Information</h2>
+<br>
+<ul>
+  <form>
+    <!--action=" <%= '/courses/' + course.courseID + '/schedule' %>"-->
+    <!--method="POST"-->
+    <!--&gt;-->
+
+    <div>
+      <label class="form-label">
+        Course ID:
+        <input
+                class="form-control"
+                type="text"
+                name="courseID"
+                value="<%= course.courseID %>"
+                disabled
+        />
+      </label>
+      <label class="form-label">
+        Course Name:
+        <input
+                class="form-control"
+                type="text"
+                name="courseName"
+                value="<%= course.courseName %>"
+                disabled
+        />
+      </label>
+    </div>
+
+    <div>
+
+      <div>Car Type:<%= course.carType %></div>
+      <div>Start Time:<%= course.startTime %></div>
+      <div>Duration:<%= course.duration %> </div>
+      <div>Capacity:<%= course.capacity %></div>
+    </div>
+    <br>
+
+  </form>
+
+
+</ul>

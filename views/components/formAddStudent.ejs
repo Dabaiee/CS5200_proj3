@@ -1,0 +1,28 @@
+<h3>Student Information</h3>
+<ul>
+  <form
+          action="<%= '/courses/' + course.courseID + '/addStudent'  %>"
+          method="POST"
+  >
+    <div>
+      <input
+              hidden
+              type="text"
+              class="form-control"
+              name="courseID"
+              value="<%= course.courseID %>"
+      />
+    </div>
+
+    <div>
+      <label class="form-label">
+        Student ID:
+        <input type="text" class="form-control" name="studentID" />
+      </label>
+    </div>
+
+    <button type="submit" class="btn btn-outline-primary">Schedule</button>
+  </form>
+</ul>
+
+
