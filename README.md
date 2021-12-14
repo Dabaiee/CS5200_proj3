@@ -38,9 +38,9 @@ Thirdly, the information of courses need to be shown. A course will have a name 
 
 **New Feature:**
 ***
-Leaderboard for all the Coaches in our Drive School, ranking by the best ratings they got or the longest teaching history.
+**Leaderboard for all the Coaches in our Drive School, ranking by the best ratings they got or the longest teaching history.**
 
-Starting from navbar at the top, try create a coach, then switch tabs to see what's the differences between two Leaderboard!
+**Starting from navbar at the top, try create a coach, then switch tabs to see what's the differences between two Leaderboard!**
 ***
 
 ## Functionalities that switched or added as Redis database:
