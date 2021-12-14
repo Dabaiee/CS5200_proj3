@@ -36,7 +36,7 @@ Secondly, the application needs to show coaches' first name, last name, phone nu
 
 Thirdly, the information of courses need to be shown. A course will have a name (maybe driving lesson: DLXXX). In addition, a car type name to help student find the specific type of car they would like to learn. Start time and duration tells the specific time to start the course and how long it will take. Capacity shows the maximum students in a certain course. Great with a short introduction. Finally, the coach of the course.
 
-**New Feature:**
+##New Feature:
 ***
 **Leaderboard for all the Coaches in our Drive School, ranking by the best ratings they got or the longest teaching history.**
 
